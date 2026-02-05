@@ -18,6 +18,8 @@ import domain.Offer
 import domain.TicketType
 import java.time.LocalDate
 import java.time.LocalTime
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 
 @Composable
 fun App() {
@@ -275,7 +277,7 @@ private fun CustomerScreen() {
 }
 
 /* =========================================================
-   ADMIN LOGIN  (FIXED: direct validateLogin, no reflection)
+   ADMIN LOGIN
    ========================================================= */
 @Composable
 private fun AdminLoginScreen(onLoginOk: () -> Unit) {
@@ -379,9 +381,17 @@ private fun AdminPanelScreen(onLogout: () -> Unit) {
         }
     }
 
-    Column(Modifier.fillMaxSize().padding(16.dp)) {
+    val scrollState = rememberScrollState()
 
-        Row(verticalAlignment = Alignment.CenterVertically) {
+    Column(
+        Modifier
+            .fillMaxSize()
+            .verticalScroll(scrollState)
+            .padding(16.dp)
+    ) {
+
+
+    Row(verticalAlignment = Alignment.CenterVertically) {
             Text("Admin panel", style = MaterialTheme.typography.headlineSmall)
             Spacer(Modifier.weight(1f))
             Button(onClick = onLogout) { Text("Logout") }
