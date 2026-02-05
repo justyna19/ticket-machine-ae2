@@ -1,7 +1,8 @@
-package data.repo
+package data
 
 import data.Database
 import domain.Offer
+import java.sql.Types
 import java.time.LocalDate
 import java.time.LocalTime
 
@@ -25,7 +26,7 @@ class OfferRepository {
                 ps.setDouble(2, discountPercent)
                 ps.setString(3, startDate)
                 ps.setString(4, endDate)
-                if (afterTime.isNullOrBlank()) ps.setNull(5, java.sql.Types.VARCHAR)
+                if (afterTime.isNullOrBlank()) ps.setNull(5, Types.VARCHAR)
                 else ps.setString(5, afterTime)
                 ps.executeUpdate()
             }

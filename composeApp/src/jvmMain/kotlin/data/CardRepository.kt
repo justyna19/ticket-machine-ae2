@@ -1,4 +1,4 @@
-package data.repo
+package data
 
 import data.CardsDatabase
 

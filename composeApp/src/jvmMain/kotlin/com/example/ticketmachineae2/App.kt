@@ -9,10 +9,10 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import data.repo.AdminRepository
-import data.repo.CardRepository
-import data.repo.DestinationRepository
-import data.repo.OfferRepository
+import data.AdminRepository
+import data.CardRepository
+import data.DestinationRepository
+import data.OfferRepository
 import domain.Destination
 import domain.Offer
 import domain.TicketType
